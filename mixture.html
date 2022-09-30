@@ -1,0 +1,665 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+   <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" ></script>
+   
+    
+    <title>Document</title>
+    <style>
+        .demo{ background: linear-gradient(to right, #4e42b9,#e98223) }
+a:hover,a:focus{
+    text-decoration: none;
+    outline: none;
+}
+#accordion .panel{
+    border: none;
+    border-radius: 5px;
+    box-shadow: none;
+    margin-bottom: 10px;
+    background: transparent;
+}
+#accordion .panel-heading{
+    padding: 0;
+    border: none;
+    border-radius: 5px;
+    background: transparent;
+    position: relative;
+}
+#accordion .panel-title a{
+    display: block;
+    padding: 20px 30px;
+    margin: 0;
+    background: rgba(0,0,0,0.4);
+    font-size: 17px;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    border-radius: 5px;
+    position: relative;
+}
+#accordion .panel-title a.collapsed{ border: none; }
+#accordion .panel-title a:before,
+#accordion .panel-title a.collapsed:before{
+    content: "\f107";
+    font-family: "Font Awesome 5 Free";
+    width: 30px;
+    height: 30px;
+    line-height: 27px;
+    text-align: center;
+    font-size: 25px;
+    font-weight: 900;
+    color: #fff;
+    position: absolute;
+    top: 15px;
+    right: 30px;
+    transform: rotate(180deg);
+    transition: all .4s cubic-bezier(0.080, 1.090, 0.320, 1.275);
+}
+#accordion .panel-title a.collapsed:before{
+    color: rgba(255,255,255,0.5);
+    transform: rotate(0deg);
+}
+#accordion .panel-body{
+    padding: 20px 30px;
+    background: rgba(0,0,0,0.1);
+    font-size: 15px;
+    color: #fff;
+    line-height: 28px;
+    letter-spacing: 1px;
+    border-top: none;
+    border-radius: 5px;
+}
+.get-in-touch {
+  max-width: 800px;
+  margin: 50px auto;
+  position: relative;
+
+}
+.get-in-touch .title {
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 3.2em;
+  line-height: 48px;
+  padding-bottom: 48px;
+     color: #5543ca;
+    background: #5543ca;
+    background: -moz-linear-gradient(left,#f4524d  0%,#5543ca 100%) !important;
+    background: -webkit-linear-gradient(left,#f4524d  0%,#5543ca 100%) !important;
+    background: linear-gradient(to right,#f4524d  0%,#5543ca  100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+}
+
+.contact-form .form-field {
+  position: relative;
+  margin: 32px 0;
+}
+.contact-form .input-text {
+  display: block;
+  width: 100%;
+  height: 36px;
+  border-width: 0 0 2px 0;
+  border-color: #5543ca;
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 400;
+}
+.contact-form .input-text:focus {
+  outline: none;
+}
+.contact-form .input-text:focus + .label,
+.contact-form .input-text.not-empty + .label {
+  -webkit-transform: translateY(-24px);
+          transform: translateY(-24px);
+}
+.contact-form .label {
+  position: absolute;
+  left: 20px;
+  bottom: 11px;
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 400;
+  color: #5543ca;
+  cursor: text;
+  transition: -webkit-transform .2s ease-in-out;
+  transition: transform .2s ease-in-out;
+  transition: transform .2s ease-in-out, 
+  -webkit-transform .2s ease-in-out;
+}
+.contact-form .submit-btn {
+  display: inline-block;
+  background-color: #000;
+   background-image: linear-gradient(125deg,#a72879,#064497);
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 16px;
+  padding: 8px 16px;
+  border: none;
+  width:200px;
+  cursor: pointer;
+}
+ /* ----3---- */
+      /* Importing fonts from Google */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+/* Reseting */
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+} */
+
+/* body { */
+    /* min-height: 100vh; */
+    /* background: linear-gradient(to bottom, #000428, #004683);
+} */
+.third{
+    background: linear-gradient(to bottom, #000428, #004683);
+    padding: 10px;
+}
+.wrapper {
+    max-width: 450px;
+    margin: 50px auto;
+    padding: 20px 30px;
+    min-height: 300px;
+    background-color: #ffffff27;
+    border-top: 1px solid #ffffff6e;
+    border-left: 1px solid #ffffff6e;
+    border-radius: 15px;
+}
+
+.wrapper .h5 {
+    color: #ddd;
+}
+
+.wrapper .form-group {
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 1.5rem;
+}
+
+.wrapper .form-group:hover {
+    border-bottom: 1px solid #eee;
+}
+
+.wrapper .form-group .icon {
+    color: #e8e8e8;
+}
+
+.wrapper .form-group .form-control {
+    background: inherit;
+    border: none;
+    border-radius: 0px;
+    box-shadow: none;
+    color: #e9e9e9;
+}
+
+.wrapper .form-group input::placeholder {
+    color: #ccc;
+}
+
+.wrapper .form-group input:focus::placeholder {
+    opacity: 0;
+}
+
+.wrapper .form-group .fa-phone {
+    transform: rotate(90deg);
+}
+
+
+.wrapper .option {
+    color: #ccc;
+    display: block;
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    user-select: none
+}
+
+.wrapper .option:hover {
+    color: #eee;
+}
+
+.wrapper .option input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0
+}
+
+.wrapper .checkmark {
+    position: absolute;
+    top: 3px;
+    left: 0;
+    height: 18px;
+    width: 18px;
+    background-color: inherit;
+    border: 2px solid #ccc;
+    border-radius: 2px
+}
+
+.wrapper .option input:checked~.checkmark {
+    transition: 300ms ease-in-out all
+}
+
+.wrapper .checkmark:after {
+    content: "\2713";
+    position: absolute;
+    display: none;
+    font-weight: 600;
+    color: #FFF;
+    font-size: 0.9rem;
+}
+
+.wrapper .option input:checked~.checkmark:after {
+    display: block
+}
+
+.wrapper .option .checkmark:after {
+    left: 2px;
+    top: -4px;
+    width: 5px;
+    height: 10px
+}
+
+.wrapper .btn.btn-primary {
+    position: relative;
+    color: #eee;
+    padding: 0.3rem 1rem;
+    border-radius: 20px;
+    border: 1px solid #ddd;
+    background-color: inherit;
+    box-shadow: none;
+    overflow: hidden;
+}
+
+.wrapper .btn.btn-primary:hover {
+    background-color: #b4b4b433;
+    color: #fff;
+}
+
+.wrapper .terms {
+    color: #bbb;
+    font-size: 0.85rem;
+    text-align: center;
+}
+
+.wrapper .terms a {
+    text-decoration: none;
+    color: #eee;
+}
+
+.wrapper .terms a:hover {
+    color: #fff;
+}
+
+.wrapper .connect {
+    position: relative;
+}
+
+.wrapper .connect::after {
+    content: "or";
+    position: absolute;
+    top: -12px;
+    width: 80px;
+    left: 39%;
+    text-align: center;
+    color: #eee;
+    z-index: 100;
+    background-color: rgba(255, 255, 255, 0.315);
+    background-color: #1f5588;
+}
+
+.wrapper .social-links {
+    margin-top: 50px;
+    position: relative;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+.wrapper .social-links li a {
+    font-size: 1.2rem;
+    width: 50px;
+    height: 50px;
+    background-color: #ffffff17;
+    border: 1px solid #ffffff66;
+    border-right: 1px solid #ffffff33;
+    border-bottom: 1px solid #ffffff33;
+    display: flex;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    border-radius: 6px;
+    box-shadow: 0 5px 30px #004683e0;
+    transition: 0.5s;
+    overflow: hidden;
+}
+
+.wrapper .social-links li a:hover {
+    transform: translateY(-20px);
+}
+
+.wrapper .social-links li a::before,
+.wrapper .btn.btn-primary::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 25px;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.6);
+    transform: skew(45deg) translateX(130px);
+    transition: .5s;
+    opacity: 0;
+}
+
+.wrapper .social-links li a:hover:before,
+.wrapper .btn.btn-primary:hover::before {
+    opacity: 1;
+    transform: skew(45deg) translateX(-130px);
+}
+
+@media(max-width: 460px) {
+    .wrapper {
+        margin: 15px;
+        padding: 20px;
+    }
+
+    .wrapper .connect::after {
+        left: 38%;
+    }
+}
+
+@media(max-width: 345px) {
+    .wrapper .connect::after {
+        left: 32%;
+    }
+}
+
+/* -----------4444---------- */
+.border-lable-flt {
+      display: block;
+      position: relative;
+    }
+
+    .border-lable-flt label,
+    .border-lable-flt>span {
+      position: absolute;
+      left: 0;
+      top: 0;
+      cursor: text;
+      font-size: 75%;
+      opacity: 1;
+      -webkit-transition: all .2s;
+      transition: all .2s;
+      top: -.5em;
+      left: 0.75rem;
+      z-index: 3;
+      line-height: 1;
+      padding: 0 1px;
+    }
+
+    .border-lable-flt label::after,
+    .border-lable-flt>span::after {
+      content: " ";
+      display: block;
+      position: absolute;
+      background: white;
+      height: 2px;
+      top: 50%;
+      left: -.2em;
+      right: -.2em;
+      z-index: -1;
+    }
+
+    .border-lable-flt .form-control::-webkit-input-placeholder {
+      opacity: 1;
+      -webkit-transition: all .2s;
+      transition: all .2s;
+    }
+
+    .border-lable-flt .form-control:placeholder-shown:not(:focus)::-webkit-input-placeholder {
+      opacity: 0;
+    }
+
+    .border-lable-flt .form-control:placeholder-shown:not(:focus)+* {
+      font-size: 150%;
+      opacity: .5;
+      top: .3em;
+    }
+
+    .input-group .border-lable-flt {
+      display: table-cell;
+    }
+
+    .input-group .border-lable-flt .form-control {
+      border-radius: 0.25rem;
+    }
+
+    .input-group .border-lable-flt:not(:last-child),
+    .input-group .border-lable-flt:not(:last-child) .form-control {
+      border-bottom-right-radius: 0;
+      border-top-right-radius: 0;
+      border-right: 0;
+    }
+
+    .input-group .border-lable-flt:not(:first-child),
+    .input-group .border-lable-flt:not(:first-child) .form-control {
+      border-bottom-left-radius: 0;
+      border-top-left-radius: 0;
+    }
+
+    .form-control:focus {
+      color: #804000;
+      background-color: #fff;
+      border-color: #006633;
+      box-shadow: 0 0 0 0.2rem rgba(0, 102, 51, 0.25);
+    }
+
+
+    </style>
+    
+</head>
+<body>
+    <div class="demo">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingOne">
+                                <h4 class="panel-title">
+                                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        Section 1
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                                <div class="panel-body">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisl lorem, dictum id pellentesque at, vestibulum ut arcu. Curabitur erat libero, egestas eu tincidunt ac, rutrum ac justo. Vivamus condimentum laoreet lectus, blandit posuere tortor aliquam vitae. Curabitur molestie eros. </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingTwo">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        Section 2
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseTwo" class="panel-collapse collapse " role="tabpanel" aria-labelledby="headingTwo">
+                                <div class="panel-body">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisl lorem, dictum id pellentesque at, vestibulum ut arcu. Curabitur erat libero, egestas eu tincidunt ac, rutrum ac justo. Vivamus condimentum laoreet lectus, blandit posuere tortor aliquam vitae. Curabitur molestie eros. </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingThree">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        Section 3
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                                <div class="panel-body">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisl lorem, dictum id pellentesque at, vestibulum ut arcu. Curabitur erat libero, egestas eu tincidunt ac, rutrum ac justo. Vivamus condimentum laoreet lectus, blandit posuere tortor aliquam vitae. Curabitur molestie eros. </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br> <br> <br>
+
+            
+        </div>
+    </div>
+    <div> 
+    <section class="get-in-touch">
+        <h1 class="title">Get in touch</h1>
+        <form class="contact-form row">
+           <div class="form-field col-lg-6">
+              <input id="name" class="input-text js-input" type="text" required>
+              <label class="label" for="name">Name</label>
+           </div>
+           <div class="form-field col-lg-6 ">
+              <input id="email" class="input-text js-input" type="email" required>
+              <label class="label" for="email">E-mail</label>
+           </div>
+           <div class="form-field col-lg-6 ">
+              <input id="company" class="input-text js-input" type="text" required>
+              <label class="label" for="company">Company Name</label>
+           </div>
+            <div class="form-field col-lg-6 ">
+              <input id="phone" class="input-text js-input" type="text" required>
+              <label class="label" for="phone">Contact Number</label>
+           </div>
+           <div class="form-field col-lg-12">
+              <input id="message" class="input-text js-input" type="text" required>
+              <label class="label" for="message">Message</label>
+           </div>
+           <div class="form-field col-lg-12">
+              <input class="submit-btn" type="submit" value="Submit">
+           </div>
+        </form>
+
+     </section>
+    </div>
+     <br> <br> <br>
+    <div class="third"> 
+     <div class="wrapper">
+        <form action="#">
+            <div class="h5 font-weight-bold text-center mb-3">Registration</div>
+            <div class="form-group d-flex align-items-center">
+                <div class="icon"><span class="far fa-user"></span></div>
+                <input autocomplete="off" type="text" class="form-control" placeholder="Name">
+            </div>
+            <div class="form-group d-flex align-items-center">
+                <div class="icon"><span class="far fa-envelope"></span></div>
+                <input autocomplete="off" type="email" class="form-control" placeholder="Email">
+            </div>
+            <div class="form-group d-flex align-items-center">
+                <div class="icon"><span class="fas fa-phone"></span></div>
+                <input autocomplete="off" type="tel" class="form-control" placeholder="Phone">
+            </div>
+            <div class="form-group d-flex align-items-center">
+                <div class="icon"><span class="fas fa-map-marker-alt"></span></div>
+                <input autocomplete="off" type="text" class="form-control" placeholder="City">
+            </div>
+            <div class="form-group d-flex align-items-center">
+                <div class="icon"><span class="fas fa-key"></span></div>
+                <input autocomplete="off" type="password" class="form-control" placeholder="Password">
+                <div class="icon btn"><span class="fas fa-eye-slash"></span></div>
+            </div>
+            <div class="mb-2">
+                <label class="option">Remember me
+                    <input type="checkbox" checked>
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+            <div class="btn btn-primary mb-3">Signup</div>
+            <div class="terms mb-2">
+                By clicking "Signup", you acknowledge that you have read the
+                <a href="#">Privacy Policy</a> and agree to the
+                <a href="#">Terms of Service</a>.
+            </div>
+            <div class="connect border-bottom mt-4 mb-4"></div>
+            <ul class="p-0 social-links">
+                <li><a href="#"><span class="fab fa-facebook-f"></span></a></li>
+                <li><a href="#"><span class="fab fa-google"></span></a></li>
+                <li><a href="#"><span class="fab fa-github"></span></a></li>
+            </ul>
+        </form>
+    </div>
+</div>
+
+<br> <br> <br>
+<!-- ------4---- -->
+<div class="container">
+    <form>
+      <legend class="m-b-1 text-xs-center">Sign up</legend>
+      <br>
+      <div class="form-group input-group">
+        <span class="border-lable-flt">
+          <input type="text" class="form-control" id="label-name" placeholder="Enter your name" required autofocus>
+          <label for="label-name">Your Name</label>
+        </span>
+      </div>
+      <br>
+
+      <div class="form-group input-group">
+        <label class="border-lable-flt">
+          <input type="email" id="label-email" class="form-control" placeholder="Your Email" required>
+          <span>Your Email</span>
+        </label>
+      </div>
+      <br>
+      <div class="form-group border-lable-flt">
+        <input type="password" id="label-password" class="form-control" placeholder="Password" required>
+        <label for="label-password">Password</label>
+      </div>
+      <br>
+      <label class="form-group border-lable-flt">
+        <select class="form-control custom-select">
+          <option selected>United States</option>
+          <option>Canada</option>
+          <option>...</option>
+        </select>
+        <span>Country</span>
+      </label>
+      <br>
+      <div class="form-group">
+        <label class="custom-control custom-checkbox">
+          <input class="custom-control-input" type="checkbox" />
+          <span class="custom-control-indicator"></span>
+          <span class="custom-control-description">Subscribe to newsletter</span>
+        </label>
+      </div>
+      <br>
+      <button class="btn btn-outline-info btn-lg" type="submit">Sign up</button>
+    </form>
+
+
+  </div>
+
+</body>
+</html>
